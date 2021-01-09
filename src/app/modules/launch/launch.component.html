@@ -7,23 +7,23 @@
                 <div class="year">Launch Year</div>
                 <div class="yearlist">
                     <ul>
-                        <li *ngFor="let year of yearFilters"><a [routerLink]="['']" queryParamsHandling="merge" [queryParams]="{launch_year: year}" class="button">{{year}}</a></li>
+                        <li *ngFor="let year of yearFilters"><a [routerLink]="['']" queryParamsHandling="merge" [queryParams]="{launch_year: activeYear===year ? '': year}" [class.active]="activeYear === year" class="button">{{year}}</a></li>
                     </ul>
                 </div>
 
                 <div class="year">Successful Launch</div>
                 <div class="yearlist">
                     <ul>
-                        <li><a [routerLink]="['']" [queryParams]="{launch_success: true}" queryParamsHandling="merge" class="button">True</a></li>
-                        <li><a [routerLink]="['']" [queryParams]="{launch_success: false}" queryParamsHandling="merge" class="button">False</a></li>
+                        <li><a [routerLink]="['']" [queryParams]="{launch_success: activeLaunchSuccess === 'true'? '' : true}" queryParamsHandling="merge" [class.active]="activeLaunchSuccess === 'true'" class="button">True</a></li>
+                        <li><a [routerLink]="['']" [queryParams]="{launch_success: activeLaunchSuccess === 'false'? '' : false}" queryParamsHandling="merge" [class.active]="activeLaunchSuccess === 'false'" class="button">False</a></li>
                     </ul>
                 </div>
 
                 <div class="year">Successful Landing</div>
                 <div class="yearlist">
                     <ul>
-                        <li><a [routerLink]="['']" [queryParams]="{land_success: true}" queryParamsHandling="merge" class="button">True</a></li>
-                        <li><a [routerLink]="['']" [queryParams]="{land_success: false}" queryParamsHandling="merge" class="button">False</a></li>
+                        <li><a [routerLink]="['']" [queryParams]="{land_success: activeLandSuccess === 'true'? '' : true}" queryParamsHandling="merge" [class.active]="activeLandSuccess === 'true'" class="button">True</a></li>
+                        <li><a [routerLink]="['']" [queryParams]="{land_success: activeLandSuccess === 'false'? '' : false}" queryParamsHandling="merge" [class.active]="activeLandSuccess === 'false'" class="button">False</a></li>
                     </ul>
                 </div>
             </div>

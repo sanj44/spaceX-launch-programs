@@ -11,8 +11,6 @@ export class HttpLaunchService {
   constructor(private httpClient: HttpClient) { }
 
   getLaunchList(params: string): Observable<any> {
-    let url = `https://api.spacexdata.com/v3/launches?${params}`;
-    debugger;
     return this.httpClient.get(`https://api.spacexdata.com/v3/launches?${params}`);
   }
 }
