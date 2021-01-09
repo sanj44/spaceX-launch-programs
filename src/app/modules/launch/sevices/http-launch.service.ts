@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Params } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,7 +10,9 @@ export class HttpLaunchService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getLaunchList(id?: string): Observable<any> {
-    return this.httpClient.get(`https://api.spacexdata.com/v3/launches?limit=100`);
+  getLaunchList(params: string): Observable<any> {
+    let url = `https://api.spacexdata.com/v3/launches?${params}`;
+    debugger;
+    return this.httpClient.get(`https://api.spacexdata.com/v3/launches?${params}`);
   }
 }

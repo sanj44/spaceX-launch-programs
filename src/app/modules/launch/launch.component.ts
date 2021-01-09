@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IMission } from './models/mission.model';
 import { HttpLaunchService } from './sevices/http-launch.service';
@@ -11,16 +12,35 @@ import { HttpLaunchService } from './sevices/http-launch.service';
 export class LaunchComponent implements OnInit {
   subscription!: Subscription;
   missions: IMission[] = [];
+  yearFilters: string[] = [];
 
 
   constructor(
-    private httpLaunchService: HttpLaunchService
-  ) { }
-
-  ngOnInit(): void {
-    this.subscription = this.httpLaunchService.getLaunchList().subscribe((missions) => {
-      this.missions = missions;
+    private httpLaunchService: HttpLaunchService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.queryParams.subscribe(params => {
+      let filters: string = this.getFilterString(params);
+      this.subscription = this.httpLaunchService.getLaunchList(filters).subscribe((missions) => {
+        this.missions = missions;
+      });
     });
+  }
+  getFilterString(params: Params): string {
+    let filters = Object.keys(params).map((k) => `${k}=${params[k]}`).join("&");
+    if (!Object.keys(params).length) {
+      filters = 'limit=100';
+    }
+    else if (Object.keys(params).length && !params.limit) {
+      filters += '&limit=100';
+    }
+    debugger;
+    return filters;
+  }
+  ngOnInit(): void {
+    let currentYear = new Date().getFullYear();
+    for (let i = 15; i > 0; i--)
+      this.yearFilters.push((currentYear - i).toString());
   }
   ngOnDestroy() {
     if (this.subscription) {

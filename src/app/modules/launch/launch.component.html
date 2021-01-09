@@ -7,29 +7,23 @@
                 <div class="year">Launch Year</div>
                 <div class="yearlist">
                     <ul>
-                        <li><a class="button">2006</a></li>
-                        <li><a class="button">2007</a></li>
-                        <li><a class="button">2008</a></li>
-                        <li><a class="button">2009</a></li>
-                        <li><a class="button">2010</a></li>
-                        <li><a class="button">2011</a></li>
-                        <li><a class="button">2012</a></li>
+                        <li *ngFor="let year of yearFilters"><a [routerLink]="['']" queryParamsHandling="merge" [queryParams]="{launch_year: year}" class="button">{{year}}</a></li>
                     </ul>
                 </div>
 
                 <div class="year">Successful Launch</div>
                 <div class="yearlist">
                     <ul>
-                        <li><a class="button">True</a></li>
-                        <li><a class="button">False</a></li>
+                        <li><a [routerLink]="['']" [queryParams]="{launch_success: true}" queryParamsHandling="merge" class="button">True</a></li>
+                        <li><a [routerLink]="['']" [queryParams]="{launch_success: false}" queryParamsHandling="merge" class="button">False</a></li>
                     </ul>
                 </div>
 
                 <div class="year">Successful Landing</div>
                 <div class="yearlist">
                     <ul>
-                        <li><a class="button">True</a></li>
-                        <li><a class="button">False</a></li>
+                        <li><a [routerLink]="['']" [queryParams]="{land_success: true}" queryParamsHandling="merge" class="button">True</a></li>
+                        <li><a [routerLink]="['']" [queryParams]="{land_success: false}" queryParamsHandling="merge" class="button">False</a></li>
                     </ul>
                 </div>
             </div>

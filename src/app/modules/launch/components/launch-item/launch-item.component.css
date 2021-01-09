@@ -29,6 +29,9 @@ li.listitem:nth-child(4n) {
     margin: 10px 0px;
     font-size: 16px;
     font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .listitem .mission-title {
@@ -50,6 +53,11 @@ li.listitem:nth-child(4n) {
     list-style: circle;
     margin-bottom: 10px;
     padding-left: 10px;
+}
+
+.mission_id_list {
+    height: 30px;
+    overflow: hidden auto;
 }
 
 .listitem ul li {

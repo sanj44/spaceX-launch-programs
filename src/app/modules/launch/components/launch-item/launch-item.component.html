@@ -2,7 +2,7 @@
     <div class="card-img"><img [src]="mission.links?.mission_patch" alt=""></div>
     <div class="card-title">{{mission.mission_name}} #{{mission.flight_number}}</div>
     <div class="mission-title">Mission ids:</div>
-    <ul>
+    <ul class="mission_id_list">
         <li *ngFor="let mission_id of mission.mission_id">{{mission_id}}</li>
     </ul>
     <div class="part-mid">
@@ -12,7 +12,7 @@
 
     <div class="part-mid">
         <div class="left-mid-part">Successful Launch</div>
-        <div class="right-mid-part">{{ mission.launch_success.toString() | titlecase }}</div>
+        <div class="right-mid-part">{{ mission.launch_success?.toString() | titlecase }}</div>
     </div>
     <div class="part-mid">
         <div class="left-mid-part">Successful Landing</div>
