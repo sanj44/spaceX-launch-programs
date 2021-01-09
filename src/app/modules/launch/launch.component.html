@@ -30,13 +30,20 @@
 
             <div class="right-content">
                 <div class="wrap-content">
-                    <ul class="listcard">
-                        <ng-container *ngFor="let mission of missions">
-                            <app-launch-item [mission]="mission"></app-launch-item>
-                        </ng-container>
-                    </ul>
+                    <ng-container *ngIf="missions.length else noRecord">
+                        <ul class="listcard">
+                            <ng-container *ngFor="let mission of missions">
+                                <app-launch-item [mission]="mission"></app-launch-item>
+                            </ng-container>
+                        </ul>
+                    </ng-container>
+                    <ng-template #noRecord>
+                        There is no launch in year {{activeYear}} for selected filters.
+                    </ng-template>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div>Designed By Sanjeet Singh</div>

@@ -13,7 +13,7 @@ export class LaunchComponent implements OnInit {
   subscription!: Subscription;
   missions: IMission[] = [];
   yearFilters: string[] = [];
-  activeYear!:string;
+  activeYear!: string;
   activeLandSuccess!: string;
   activeLaunchSuccess!: string;
 
@@ -32,7 +32,6 @@ export class LaunchComponent implements OnInit {
     this.activeYear = params.launch_year;
     this.activeLandSuccess = params.land_success;
     this.activeLaunchSuccess = params.launch_success;
-    debugger;
     let filters = Object.keys(params).map((k) => `${k}=${params[k]}`).join("&");
     if (!Object.keys(params).length) {
       filters = 'limit=100';
@@ -48,9 +47,7 @@ export class LaunchComponent implements OnInit {
       this.yearFilters.push((currentYear - i).toString());
   }
   ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    this.subscription.unsubscribe();
   }
 
 }
