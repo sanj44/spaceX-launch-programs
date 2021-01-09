@@ -1,0 +1,48 @@
+<div class="wrapper-outer">
+    <div class="outer-content">
+        <div class="container">
+            <h1>SpaceX Launch Programs</h1>
+            <div class="left-sidebar">
+                <div class="filter-heading">Filters</div>
+                <div class="year">Launch Year</div>
+                <div class="yearlist">
+                    <ul>
+                        <li><a class="button">2006</a></li>
+                        <li><a class="button">2007</a></li>
+                        <li><a class="button">2008</a></li>
+                        <li><a class="button">2009</a></li>
+                        <li><a class="button">2010</a></li>
+                        <li><a class="button">2011</a></li>
+                        <li><a class="button">2012</a></li>
+                    </ul>
+                </div>
+
+                <div class="year">Successful Launch</div>
+                <div class="yearlist">
+                    <ul>
+                        <li><a class="button">True</a></li>
+                        <li><a class="button">False</a></li>
+                    </ul>
+                </div>
+
+                <div class="year">Successful Landing</div>
+                <div class="yearlist">
+                    <ul>
+                        <li><a class="button">True</a></li>
+                        <li><a class="button">False</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right-content">
+                <div class="wrap-content">
+                    <ul class="listcard">
+                        <ng-container *ngFor="let mission of missions">
+                            <app-launch-item [mission]="mission"></app-launch-item>
+                        </ng-container>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

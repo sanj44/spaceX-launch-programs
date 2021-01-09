@@ -1,0 +1,126 @@
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper-outer {
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.left-sidebar {
+    background-color: #fff;
+    padding: 15px;
+    width: 20%;
+    float: left;
+    margin-right: 1%;
+    box-sizing: border-box;
+}
+
+.right-content {
+    width: 78%;
+    float: right;
+    margin-left: 1%;
+    box-sizing: border-box;
+}
+
+.outer-content {
+    display: inline-block;
+    width: 100%;
+}
+
+.listcard {
+    text-align: left;
+}
+
+.left-sidebar .year {
+    max-width: 90%;
+    margin: 0px auto;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.left-sidebar .yearlist {
+    max-width: 90%;
+    margin: 0px auto;
+}
+
+.left-sidebar li a.button {
+    text-decoration: none;
+    color: black;
+}
+
+.left-sidebar ul {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    list-style: none;
+    display: inline-block;
+}
+
+.left-sidebar ul li {
+    width: 50%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.left-sidebar ul li:nth-child(even) {
+    text-align: right;
+}
+
+.left-sidebar ul li a {
+    background-color: #c5e09b;
+    display: inline-block;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+@media (min-width:320px) and (max-width:700px) {
+    .container {
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    .left-sidebar {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 20px;
+        float: none;
+    }
+    .right-content {
+        width: 100%;
+        margin-left: 0px;
+        margin-bottom: 20px;
+        float: none;
+    }
+}
+
+@media (min-width:701px) and (max-width:1024px) {
+    .container {
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    .left-sidebar {
+        width: 30%;
+    }
+    .right-content {
+        width: 68%;
+    }
+}
+
+@media (min-width:1025px) and (max-width:1399px) {
+    .container {
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    .wrap-content {
+        text-align: center;
+    }
+}

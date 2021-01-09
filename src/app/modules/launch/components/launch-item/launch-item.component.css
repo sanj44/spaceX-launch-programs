@@ -1,0 +1,105 @@
+li {
+    background-color: #fff;
+    padding: 15px;
+    display: inline-block;
+    width: 23%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    box-sizing: border-box;
+}
+
+li.listitem:nth-child(4n) {
+    margin-right: 0px;
+}
+
+.listitem .card-img {
+    background-color: #f2f2f2;
+    width: 100%;
+    text-align: center;
+}
+
+.listitem .card-img img {
+    width: 100%;
+    max-width: 190px;
+    margin: 0px auto;
+}
+
+.listitem .card-title {
+    color: #474782;
+    margin: 10px 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.listitem .mission-title {
+    color: #000;
+    margin: 10px 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.listitem .mission-title {
+    color: #000;
+    margin: 10px 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.listitem ul {
+    margin: 0px;
+    list-style: circle;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.listitem ul li {
+    padding: 0px 0px 0px 15px;
+    margin-left: 8px;
+    color: #8e92b8;
+    width: 100%;
+    position: relative;
+}
+
+.listitem ul li:after {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #8e92b8;
+    border-radius: 30px;
+    content: '';
+    left: 0px;
+    top: 7px;
+}
+
+.part-mid {
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0px;
+}
+
+.part-mid .left-mid-part {
+    float: left;
+    margin-right: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.part-mid .right-mid-part {
+    float: left;
+    margin-right: 8px;
+}
+
+@media (min-width:320px) and (max-width:700px) {
+    .listitem {
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width:701px) and (max-width:1024px) {
+    .listitem {
+        width: 48%;
+    }
+}
