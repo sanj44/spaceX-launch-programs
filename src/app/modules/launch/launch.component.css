@@ -130,3 +130,9 @@ a.button:hover {
         text-align: center;
     }
 }
+
+.designer {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+}

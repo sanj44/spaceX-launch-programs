@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, throwError } from 'rxjs';
 import { IMission } from './models/mission.model';
 import { HttpLaunchService } from './sevices/http-launch.service';
-
+import { NgxUiLoaderService } from "ngx-ui-loader";
 @Component({
   selector: 'app-launch',
   templateUrl: './launch.component.html',
@@ -19,12 +19,15 @@ export class LaunchComponent implements OnInit {
 
   constructor(
     private httpLaunchService: HttpLaunchService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private ngxService: NgxUiLoaderService
   ) {
     this.activatedRoute.queryParams.subscribe(params => {
+      this.ngxService.start();
       let filters: string = this.getFilterString(params);
       this.subscription = this.httpLaunchService.getLaunchList(filters).subscribe((missions) => {
         this.missions = missions;
+        this.ngxService.stop();
       });
     });
   }
