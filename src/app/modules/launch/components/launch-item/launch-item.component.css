@@ -37,14 +37,14 @@ li.listitem:nth-child(4n) {
 .listitem .mission-title {
     color: #000;
     margin: 10px 0px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .listitem .mission-title {
     color: #000;
     margin: 10px 0px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -88,7 +88,7 @@ li.listitem:nth-child(4n) {
 .part-mid .left-mid-part {
     float: left;
     margin-right: 8px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 
