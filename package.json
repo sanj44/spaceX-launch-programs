@@ -12,7 +12,6 @@
         "test:report": "ng test --code-coverage",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "postinstall": "ng build --prod && ng run spaceX-launch-programs:server:production",
         "dev:ssr": "ng run spaceX-launch-programs:serve-ssr",
         "start": "node dist/spaceX-launch-programs/server/main.js",
         "build": "ng build --prod && ng run spaceX-launch-programs:server:production",
